@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:ionicons/ionicons.dart';
 
 class DrawerMenuItem {
   final String label;
@@ -12,8 +14,7 @@ class DrawerMenuItem {
 final List<DrawerMenuItem> drawerMenu = [
   DrawerMenuItem(label: '我的', icon: Icons.person, routeName: '/user'),
   DrawerMenuItem(
-      label: '数据', icon: Icons.stacked_bar_chart_sharp, routeName: '/data'),
-  DrawerMenuItem(label: '设置', icon: Icons.settings, routeName: '/settings'),
+      label: '数据', icon: Icons.stacked_bar_chart_sharp, routeName: '/data')
 ];
 
 class LayoutDrawer extends StatefulWidget {
@@ -39,57 +40,50 @@ class _LayoutDrawerState extends State<LayoutDrawer> {
             child: SingleChildScrollView(
               physics: const BouncingScrollPhysics(),
               child: Column(
-                children: [
-                  Container(
-                    width: double.infinity,
-                    height: 100,
-                    alignment: Alignment.center,
-                    child: const Icon(
-                      Icons.favorite,
-                      color: Colors.red,
-                    ),
-                  ),
-                  Column(
-                    children: drawerMenu.map((item) {
-                      return GestureDetector(
-                        behavior: HitTestBehavior.opaque,
-                        onTap: () {
-                          Navigator.pushNamed(context, item.routeName);
-                        },
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(
-                            vertical: 5,
-                            horizontal: 15,
-                          ),
-                          child: Container(
-                            width: double.infinity,
-                            height: 50,
-                            alignment: Alignment.centerLeft,
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: 25,
-                            ),
-                            child: DrawerMenuLabelItem(
-                              icon: item.icon,
-                              label: item.label,
-                            ),
-                          ),
+                children: drawerMenu.map((item) {
+                  return GestureDetector(
+                    behavior: HitTestBehavior.opaque,
+                    onTap: () {
+                      Navigator.pushNamed(context, item.routeName);
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                        vertical: 5,
+                        horizontal: 15,
+                      ),
+                      child: Container(
+                        width: double.infinity,
+                        height: 50,
+                        alignment: Alignment.centerLeft,
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 25,
                         ),
-                      );
-                    }).toList(),
-                  )
-                ],
+                        child: DrawerMenuLabelItem(
+                          icon: item.icon,
+                          label: item.label,
+                        ),
+                      ),
+                    ),
+                  );
+                }).toList(),
               ),
             ),
           ),
-          Container(
-            padding: EdgeInsets.only(
-              top: 40,
-              left: 40,
-              bottom: MediaQuery.of(context).padding.bottom + 35,
-            ),
-            child: const DrawerMenuLabelItem(
-              icon: Icons.logout_rounded,
-              label: '退出',
+          GestureDetector(
+            onTap: () {
+              Navigator.pushNamed(context, "/settings");
+            },
+            behavior: HitTestBehavior.opaque,
+            child: Container(
+              padding: EdgeInsets.only(
+                top: 40,
+                left: 40,
+                bottom: MediaQuery.of(context).padding.bottom + 35,
+              ),
+              child: const DrawerMenuLabelItem(
+                icon: Ionicons.cog,
+                label: '设置',
+              ),
             ),
           ),
         ],

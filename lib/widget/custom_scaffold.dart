@@ -7,11 +7,13 @@ class CustomScaffold extends StatefulWidget {
     required this.title,
     required this.body,
     this.actions = const [],
+    this.onBack,
   });
 
   final String title;
   final Widget body;
   final List<Widget> actions;
+  final VoidCallback? onBack;
 
   @override
   State<CustomScaffold> createState() => _CustomScaffoldState();
@@ -23,12 +25,19 @@ class _CustomScaffoldState extends State<CustomScaffold> {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
+        leadingWidth: 45,
         leading: GestureDetector(
           behavior: HitTestBehavior.opaque,
           onTap: () {
-            Navigator.pop(context);
+            if (widget.onBack != null) {
+              widget.onBack!();
+            } else {
+              Navigator.pop(context);
+            }
           },
-          child: const Icon(FontAwesomeIcons.chevronLeft),
+          child: const Icon(
+            FontAwesomeIcons.chevronLeft,
+          ),
         ),
         actions: widget.actions,
       ),

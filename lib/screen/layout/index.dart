@@ -45,6 +45,7 @@ class _LayoutPageState extends State<LayoutPage> {
       child: Scaffold(
         key: scaffoldKey,
         extendBody: false,
+        resizeToAvoidBottomInset: false,
         extendBodyBehindAppBar: false,
         appBar: Appbar(
           scaffoldKey: scaffoldKey,
@@ -78,7 +79,7 @@ class _LayoutPageState extends State<LayoutPage> {
       unselectedItemColor: configProvider.isLight
           ? const Color(0xFFA3A3A3)
           : const Color(0xFF8D8D8D),
-      selectedItemColor: configProvider.isLight ? Colors.black : Colors.white,
+      selectedItemColor: commonColor,
       selectedLabelStyle: const TextStyle(
         fontWeight: FontWeight.w500,
       ),

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:toast_note/config/colors.dart';
 import 'package:toast_note/provider/config.dart';
@@ -35,13 +37,13 @@ class Appbar extends StatelessWidget implements PreferredSizeWidget {
                 child: Row(
                   children: [
                     Container(
-                      width: 34,
-                      height: 34,
+                      width: 30,
+                      height: 30,
                       margin: const EdgeInsets.only(right: 10),
-                      child: const ClipOval(
-                        child: Image(
-                          image: AssetImage("assets/images/head.png"),
-                        ),
+                      child: SvgPicture.asset(
+                        "assets/images/obsidian.svg",
+                        width: 30,
+                        height: 30,
                       ),
                     ),
                     Column(
@@ -80,54 +82,34 @@ class Appbar extends StatelessWidget implements PreferredSizeWidget {
               child: GestureDetector(
                 behavior: HitTestBehavior.opaque,
                 onTap: () {
-                  showModalBottomSheet(
-                    context: context,
-                    shape: const RoundedRectangleBorder(
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(15),
-                        topRight: Radius.circular(15),
-                      ),
-                    ),
-                    builder: (context) {
-                      return Container(
-                        height: double.infinity,
-                      );
-                    },
-                  );
+                  Navigator.pushNamed(context, "/new");
+                  // showModalBottomSheet(
+                  //   context: context,
+                  //   shape: const RoundedRectangleBorder(
+                  //     borderRadius: BorderRadius.only(
+                  //       topLeft: Radius.circular(15),
+                  //       topRight: Radius.circular(15),
+                  //     ),
+                  //   ),
+                  //   builder: (context) {
+                  //     return Container(
+                  //       height: double.infinity,
+                  //     );
+                  //   },
+                  // );
                 },
-                child: Stack(
-                  children: [
-                    SizedBox(
-                      width: 19,
-                      height: 30,
-                      child: Image(
-                        width: 19,
-                        height: 19,
-                        image: configProvider.isLight
-                            ? const AssetImage("assets/images/notice_dark.png")
-                            : const AssetImage(
-                                "assets/images/notice_light.png"),
-                      ),
-                    ),
-                    Positioned(
-                      top: 3,
-                      right: 0,
-                      child: Container(
-                        width: 9,
-                        height: 9,
-                        decoration: BoxDecoration(
-                          color: Colors.red,
-                          shape: BoxShape.circle,
-                          border: Border.all(
-                            color: configProvider.isLight
-                                ? Colors.white
-                                : Colors.black,
-                            width: 1.5,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
+                child: Container(
+                  width: 24,
+                  height: 24,
+                  decoration: BoxDecoration(
+                    color: commonColor,
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: const Icon(
+                    FontAwesomeIcons.plus,
+                    size: 14,
+                    color: Colors.white,
+                  ),
                 ),
               ),
             ),

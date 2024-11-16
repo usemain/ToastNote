@@ -10,8 +10,11 @@ class TodosPage extends StatefulWidget {
 class _TodosPageState extends State<TodosPage> {
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text('Todos Page'),
+    return const Scaffold(
+      resizeToAvoidBottomInset: false,
+      body: Center(
+        child: Text('Todos Page'),
+      ),
     );
   }
 }

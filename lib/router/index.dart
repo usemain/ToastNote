@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:toast_note/screen/data/index.dart';
 import 'package:toast_note/screen/layout/index.dart';
+import 'package:toast_note/screen/new/index.dart';
 import 'package:toast_note/screen/settings/index.dart';
 import 'package:toast_note/screen/user/index.dart';
 
@@ -9,6 +10,9 @@ Route<dynamic> routes(RouteSettings settings) {
   switch (settings.name) {
     case '/':
       builder = (BuildContext _) => const LayoutPage();
+      break;
+    case '/new':
+      builder = (BuildContext _) => const NewPage();
       break;
     case '/user':
       builder = (BuildContext _) => const UserPage();
