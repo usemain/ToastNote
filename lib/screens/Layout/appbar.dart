@@ -82,7 +82,7 @@ class Appbar extends StatelessWidget implements PreferredSizeWidget {
               child: GestureDetector(
                 behavior: HitTestBehavior.opaque,
                 onTap: () {
-                  Navigator.pushNamed(context, "/new_note");
+                  Navigator.pushNamed(context, "/NoteEditor");
                   // showModalBottomSheet(
                   //   context: context,
                   //   shape: const RoundedRectangleBorder(

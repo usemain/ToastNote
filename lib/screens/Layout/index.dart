@@ -6,9 +6,9 @@ import 'package:provider/provider.dart';
 import 'package:toast_note/screens/Layout/drawer.dart';
 import 'package:toast_note/screens/Layout/appbar.dart';
 import '../../shares/android_back_desktop.dart';
-import 'home/index.dart';
-import 'statistics/index.dart';
-import 'todos/index.dart';
+import 'Home/index.dart';
+import 'Statistics/index.dart';
+import 'Todos/index.dart';
 
 final List<Widget> tabBarPages = [
   const HomePage(),

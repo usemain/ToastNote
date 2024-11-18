@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:toast_note/screens/Data/index.dart';
 import 'package:toast_note/screens/Layout/index.dart';
-import 'package:toast_note/screens/NewNote/index.dart';
+import 'package:toast_note/screens/NoteEditor/index.dart';
 import 'package:toast_note/screens/Settings/index.dart';
 import 'package:toast_note/screens/User/index.dart';
 
@@ -11,16 +11,16 @@ Route<dynamic> routes(RouteSettings settings) {
     case '/':
       builder = (BuildContext _) => const LayoutPage();
       break;
-    case '/new_note':
-      builder = (BuildContext _) => const NewPage();
+    case '/NoteEditor':
+      builder = (BuildContext _) => const NoteEditorPage();
       break;
-    case '/user':
+    case '/User':
       builder = (BuildContext _) => const UserPage();
       break;
-    case '/data':
+    case '/Data':
       builder = (BuildContext _) => const DataPage();
       break;
-    case '/settings':
+    case '/Settings':
       builder = (BuildContext _) => const SettingsPage();
       break;
     default:

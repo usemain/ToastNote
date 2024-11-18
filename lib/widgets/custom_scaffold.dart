@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:toast_note/shares/colors.dart';
 
 class CustomScaffold extends StatefulWidget {
   const CustomScaffold(
@@ -28,7 +29,13 @@ class _CustomScaffoldState extends State<CustomScaffold> {
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 70,
-        title: Text(widget.title),
+        title: Text(
+          widget.title,
+          style: const TextStyle(
+            fontFamily: 'alimama',
+            color: commonColor,
+          ),
+        ),
         leadingWidth: 45,
         leading: GestureDetector(
           behavior: HitTestBehavior.opaque,

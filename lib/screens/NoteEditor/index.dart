@@ -8,14 +8,14 @@ import 'package:toast_note/shares/colors.dart';
 import 'package:toast_note/providers/config.dart';
 import 'package:toast_note/widgets/custom_scaffold.dart';
 
-class NewPage extends StatefulWidget {
-  const NewPage({super.key});
+class NoteEditorPage extends StatefulWidget {
+  const NoteEditorPage({super.key});
 
   @override
-  State<NewPage> createState() => _NewPageState();
+  State<NoteEditorPage> createState() => _NoteEditorPageState();
 }
 
-class _NewPageState extends State<NewPage> {
+class _NoteEditorPageState extends State<NoteEditorPage> {
   final QuillController _controller = QuillController.basic();
   late ConfigProvider configProvider;
   final docData = [
@@ -89,7 +89,7 @@ class _NewPageState extends State<NewPage> {
     return PopScope(
       canPop: false,
       child: CustomScaffold(
-        title: '创建',
+        title: '编辑',
         interceptBack: true,
         interceptMessage: '您确定退出编辑吗?',
         actions: [

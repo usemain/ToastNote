@@ -11,9 +11,9 @@ class DrawerMenuItem {
 }
 
 final List<DrawerMenuItem> drawerMenu = [
-  DrawerMenuItem(label: '我的', icon: Icons.person, routeName: '/user'),
+  DrawerMenuItem(label: '我的', icon: Icons.person, routeName: '/User'),
   DrawerMenuItem(
-      label: '数据', icon: Icons.stacked_bar_chart_sharp, routeName: '/data')
+      label: '数据', icon: Icons.stacked_bar_chart_sharp, routeName: '/Data')
 ];
 
 class LayoutDrawer extends StatefulWidget {
@@ -70,7 +70,7 @@ class _LayoutDrawerState extends State<LayoutDrawer> {
           ),
           GestureDetector(
             onTap: () {
-              Navigator.pushNamed(context, "/settings");
+              Navigator.pushNamed(context, "/Settings");
             },
             behavior: HitTestBehavior.opaque,
             child: Container(
