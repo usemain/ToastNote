@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_quill/flutter_quill.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
-import 'package:toast_note/config/colors.dart';
-import 'package:toast_note/provider/config.dart';
-import 'package:toast_note/widget/custom_scaffold.dart';
+import 'package:toast_note/shares/colors.dart';
+import 'package:toast_note/providers/config.dart';
+import 'package:toast_note/widgets/custom_scaffold.dart';
 
 class NewPage extends StatefulWidget {
   const NewPage({super.key});

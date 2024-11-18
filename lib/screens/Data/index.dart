@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:toast_note/widget/custom_scaffold.dart';
+import 'package:toast_note/widgets/custom_scaffold.dart';
 
 class DataPage extends StatelessWidget {
   const DataPage({super.key});

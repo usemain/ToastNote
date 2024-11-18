@@ -1,12 +1,44 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:toast_note/config/colors.dart';
-import 'package:toast_note/provider/config.dart';
+import 'package:toast_note/shares/colors.dart';
+import 'package:toast_note/providers/config.dart';
 import 'package:provider/provider.dart';
-import 'package:toast_note/screen/layout/components/drawer.dart';
-import 'package:toast_note/screen/layout/components/appbar.dart';
-import '../../native/android_back_desktop.dart';
-import 'config/index.dart';
+import 'package:toast_note/screens/Layout/drawer.dart';
+import 'package:toast_note/screens/Layout/appbar.dart';
+import '../../shares/android_back_desktop.dart';
+import 'home/index.dart';
+import 'statistics/index.dart';
+import 'todos/index.dart';
+
+final List<Widget> tabBarPages = [
+  const HomePage(),
+  const StatisticsPage(),
+  const TodosPage(),
+];
+
+List<BottomNavigationBarItem> buildTabBarItems() {
+  return [
+    buildBottomNavigationBarItem(Icons.savings, '主页'),
+    buildBottomNavigationBarItem(Icons.donut_large, '统计'),
+    buildBottomNavigationBarItem(Icons.description, '待办'),
+  ];
+}
+
+BottomNavigationBarItem buildBottomNavigationBarItem(
+  IconData icon,
+  String label,
+) {
+  return BottomNavigationBarItem(
+    icon: Container(
+      margin: const EdgeInsets.only(bottom: 2),
+      child: Icon(
+        icon,
+        size: 26,
+      ),
+    ),
+    label: label,
+  );
+}
 
 class LayoutPage extends StatefulWidget {
   const LayoutPage({super.key});

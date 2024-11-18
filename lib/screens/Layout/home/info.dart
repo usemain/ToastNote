@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:toast_note/config/colors.dart';
-import 'package:toast_note/widget/progress/circle.dart';
+import 'package:toast_note/shares/colors.dart';
+import 'package:toast_note/widgets/Progress/circle.dart';
 
 class Info extends StatefulWidget {
   const Info({super.key});

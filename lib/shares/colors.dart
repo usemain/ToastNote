@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:toast_note/provider/config.dart';
+import 'package:toast_note/providers/config.dart';
 
 const double iconSize = 20;
 

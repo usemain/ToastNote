@@ -1,6 +1,6 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:toast_note/config/colors.dart';
+import 'package:toast_note/shares/colors.dart';
 
 class CustomSwitch extends StatefulWidget {
   const CustomSwitch({

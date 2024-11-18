@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:toast_note/config/colors.dart';
+import 'package:toast_note/shares/colors.dart';
 import 'dart:math';
 
 /// 自定义进度环组件

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:toast_note/screen/data/index.dart';
-import 'package:toast_note/screen/layout/index.dart';
-import 'package:toast_note/screen/new/index.dart';
-import 'package:toast_note/screen/settings/index.dart';
-import 'package:toast_note/screen/user/index.dart';
+import 'package:toast_note/screens/Data/index.dart';
+import 'package:toast_note/screens/Layout/index.dart';
+import 'package:toast_note/screens/NewNote/index.dart';
+import 'package:toast_note/screens/Settings/index.dart';
+import 'package:toast_note/screens/User/index.dart';
 
 Route<dynamic> routes(RouteSettings settings) {
   WidgetBuilder builder;
@@ -11,7 +11,7 @@ Route<dynamic> routes(RouteSettings settings) {
     case '/':
       builder = (BuildContext _) => const LayoutPage();
       break;
-    case '/new':
+    case '/new_note':
       builder = (BuildContext _) => const NewPage();
       break;
     case '/user':

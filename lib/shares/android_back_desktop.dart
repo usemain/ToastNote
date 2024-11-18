@@ -1,5 +1,5 @@
 import 'package:flutter/services.dart';
-import 'package:toast_note/config/native.dart';
+import 'package:toast_note/shares/native.dart';
 
 class AndroidBack {
   static MethodChannel platform = const MethodChannel(androidBack);

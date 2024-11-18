@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:toast_note/config/colors.dart';
-import 'package:toast_note/provider/config.dart';
-import 'package:toast_note/widget/custom_scaffold.dart';
+import 'package:toast_note/shares/colors.dart';
+import 'package:toast_note/providers/config.dart';
+import 'package:toast_note/widgets/custom_scaffold.dart';
 import 'package:provider/provider.dart';
 
 class SettingsPage extends StatefulWidget {

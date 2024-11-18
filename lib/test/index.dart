@@ -2,13 +2,13 @@ import 'dart:io';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:toast_note/config/colors.dart';
-import 'package:toast_note/provider/config.dart';
+import 'package:toast_note/shares/colors.dart';
+import 'package:toast_note/providers/config.dart';
 import 'package:provider/provider.dart';
-import 'package:toast_note/screen/layout/components/drawer.dart';
-import 'package:toast_note/screen/layout/components/appbar.dart';
-import '../../../native/android_back_desktop.dart';
-import '../config/index.dart';
+import 'package:toast_note/screens/Layout/drawer.dart';
+import 'package:toast_note/screens/Layout/appbar.dart';
+import 'package:toast_note/screens/Layout/index.dart';
+import '../shares/android_back_desktop.dart';
 
 class LayoutPage extends StatefulWidget {
   const LayoutPage({super.key});

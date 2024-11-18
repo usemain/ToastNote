@@ -41,7 +41,6 @@ class _CustomScaffoldState extends State<CustomScaffold> {
                 context: context,
                 builder: (BuildContext ctx) {
                   return AlertDialog(
-                    // 圆角
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(15),
                     ),

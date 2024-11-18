@@ -1,8 +1,8 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:toast_note/config/colors.dart';
-import 'package:toast_note/provider/config.dart';
+import 'package:toast_note/shares/colors.dart';
+import 'package:toast_note/providers/config.dart';
 
 class Appbar extends StatelessWidget implements PreferredSizeWidget {
   const Appbar({
