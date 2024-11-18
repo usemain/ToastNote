@@ -30,7 +30,7 @@ Route<dynamic> routes(RouteSettings settings) {
   return PageRouteBuilder(
     pageBuilder: (context, animation, secondaryAnimation) => builder(context),
     settings: settings,
-    transitionsBuilder: (context, animation, _, child) {
+    transitionsBuilder: (context, animation, secondaryAnimation, child) {
       const begin = Offset(1.0, 0.0);
       const end = Offset.zero;
       const curve = Curves.easeInOut;
@@ -38,9 +38,15 @@ Route<dynamic> routes(RouteSettings settings) {
       var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
       var offsetAnimation = animation.drive(tween);
 
-      return SlideTransition(
-        position: offsetAnimation,
-        child: child,
+      var opacityTween = Tween(begin: 0.0, end: 1.0);
+      var opacityAnimation = animation.drive(opacityTween);
+
+      return FadeTransition(
+        opacity: opacityAnimation,
+        child: SlideTransition(
+          position: offsetAnimation,
+          child: child,
+        ),
       );
     },
   );
