@@ -86,58 +86,64 @@ class _NewPageState extends State<NewPage> {
 
     final themeBgColor = isThemeBgColor(configProvider);
 
-    return CustomScaffold(
-      title: '创建',
-      actions: [
-        Container(
-          margin: const EdgeInsets.only(right: 15),
-          width: 24,
-          height: 24,
-          decoration: BoxDecoration(
-            color: commonColor,
-            borderRadius: BorderRadius.circular(12),
-          ),
-          child: GestureDetector(
-            onTap: () {
-              final json = jsonEncode(_controller.document.toDelta().toJson());
-              debugPrint(json);
-            },
-            child: const Icon(
-              FontAwesomeIcons.check,
-              size: 14,
-              color: Colors.white,
+    return PopScope(
+      canPop: false,
+      child: CustomScaffold(
+        title: '创建',
+        interceptBack: true,
+        interceptMessage: '您确定退出编辑吗?',
+        actions: [
+          Container(
+            margin: const EdgeInsets.only(right: 15),
+            width: 24,
+            height: 24,
+            decoration: BoxDecoration(
+              color: commonColor,
+              borderRadius: BorderRadius.circular(12),
             ),
-          ),
-        )
-      ],
-      body: SafeArea(
-        child: Column(
-          children: [
-            Expanded(
-              child: Padding(
-                padding: const EdgeInsets.only(
-                  left: 15,
-                  right: 15,
-                ),
-                child: QuillEditor.basic(
-                  controller: _controller,
-                  configurations: const QuillEditorConfigurations(
-                    placeholder: "请输入...",
-                    textSelectionThemeData: TextSelectionThemeData(
-                      cursorColor: commonDetultColor,
+            child: GestureDetector(
+              onTap: () {
+                final json =
+                    jsonEncode(_controller.document.toDelta().toJson());
+                debugPrint(json);
+              },
+              child: const Icon(
+                FontAwesomeIcons.check,
+                size: 14,
+                color: Colors.white,
+              ),
+            ),
+          )
+        ],
+        body: SafeArea(
+          child: Column(
+            children: [
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.only(
+                    left: 15,
+                    right: 15,
+                  ),
+                  child: QuillEditor.basic(
+                    controller: _controller,
+                    configurations: const QuillEditorConfigurations(
+                      placeholder: "请输入...",
+                      textSelectionThemeData: TextSelectionThemeData(
+                        cursorColor: commonDetultColor,
+                      ),
                     ),
                   ),
                 ),
               ),
-            ),
-            QuillSimpleToolbar(
-              controller: _controller,
-              configurations: QuillSimpleToolbarConfigurations(
-                multiRowsDisplay: false,
-                color: themeBgColor,
+              QuillSimpleToolbar(
+                controller: _controller,
+                configurations: QuillSimpleToolbarConfigurations(
+                  multiRowsDisplay: false,
+                  color: themeBgColor,
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

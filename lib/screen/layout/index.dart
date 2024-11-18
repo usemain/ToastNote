@@ -30,7 +30,7 @@ class _LayoutPageState extends State<LayoutPage> {
   Widget build(BuildContext context) {
     configProvider = Provider.of<ConfigProvider>(context);
 
-    return PopScope<Object>(
+    return PopScope(
       canPop: false,
       onPopInvokedWithResult: (didPop, dynamic) async {
         if (scaffoldKey.currentState!.isDrawerOpen) {
