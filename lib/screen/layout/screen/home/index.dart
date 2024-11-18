@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:toast_note/screen/layout/screen/home/components/info.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

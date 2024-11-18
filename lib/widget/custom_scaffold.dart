@@ -24,6 +24,7 @@ class _CustomScaffoldState extends State<CustomScaffold> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        toolbarHeight: 70,
         title: Text(widget.title),
         leadingWidth: 45,
         leading: GestureDetector(
@@ -35,8 +36,23 @@ class _CustomScaffoldState extends State<CustomScaffold> {
               Navigator.pop(context);
             }
           },
-          child: const Icon(
-            FontAwesomeIcons.chevronLeft,
+          child: SizedBox(
+            width: 45,
+            child: Center(
+              child: Container(
+                width: 24,
+                height: 24,
+                decoration: BoxDecoration(
+                  color: const Color(0xFFEC6A5E),
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: const Icon(
+                  FontAwesomeIcons.xmark,
+                  size: 14,
+                  color: Color(0xFF8B1A10),
+                ),
+              ),
+            ),
           ),
         ),
         actions: widget.actions,

@@ -84,7 +84,6 @@ class ThemeBox extends StatelessWidget {
           child: Container(
             width: double.infinity,
             padding: const EdgeInsets.only(
-              top: 15,
               left: 15,
               right: 15,
               bottom: 25,
