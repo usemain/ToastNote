@@ -5,7 +5,6 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_quill/translations.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:toast_note/shares/colors.dart';
 import 'package:toast_note/providers/config.dart';
 import 'package:toast_note/routes/index.dart';
 import 'package:toast_note/theme.dart';
