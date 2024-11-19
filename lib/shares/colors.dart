@@ -27,6 +27,6 @@ Color isThemePopupBgColor(ConfigProvider configProvider) {
   if (configProvider.isLight) {
     return const Color(0xFFFFFFFF);
   } else {
-    return const Color(0xFF0E0E10);
+    return const Color.fromARGB(255, 20, 20, 23);
   }
 }

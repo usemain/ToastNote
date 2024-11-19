@@ -53,12 +53,6 @@ class _LayoutPageState extends State<LayoutPage> {
   GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
-  void dispose() {
-    super.dispose();
-    configProvider.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
     configProvider = Provider.of<ConfigProvider>(context);
 

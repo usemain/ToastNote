@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_quill/flutter_quill.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
+import 'package:toast_note/screens/NoteEditor/note_editor_menu.dart';
 import 'package:toast_note/shares/colors.dart';
 import 'package:toast_note/providers/config.dart';
 import 'package:toast_note/widgets/custom_scaffold.dart';
@@ -17,6 +18,7 @@ class NoteEditorPage extends StatefulWidget {
 
 class _NoteEditorPageState extends State<NoteEditorPage> {
   final QuillController _controller = QuillController.basic();
+  final FocusNode _focusNode = FocusNode();
   late ConfigProvider configProvider;
   final docData = [
     {
@@ -77,6 +79,7 @@ class _NoteEditorPageState extends State<NoteEditorPage> {
   @override
   void dispose() {
     _controller.dispose();
+    _focusNode.dispose();
     super.dispose();
   }
 
@@ -84,13 +87,13 @@ class _NoteEditorPageState extends State<NoteEditorPage> {
   Widget build(BuildContext context) {
     configProvider = Provider.of<ConfigProvider>(context);
 
-    final themeBgColor = isThemeBgColor(configProvider);
+    Color themeBgColor = isThemeBgColor(configProvider);
 
     return PopScope(
       canPop: false,
       child: CustomScaffold(
         title: '编辑',
-        interceptBack: true,
+        // interceptBack: true,
         interceptMessage: '您确定退出编辑吗?',
         actions: [
           Container(
@@ -126,6 +129,7 @@ class _NoteEditorPageState extends State<NoteEditorPage> {
                   ),
                   child: QuillEditor.basic(
                     controller: _controller,
+                    focusNode: _focusNode,
                     configurations: const QuillEditorConfigurations(
                       placeholder: "请输入...",
                       textSelectionThemeData: TextSelectionThemeData(
@@ -135,13 +139,15 @@ class _NoteEditorPageState extends State<NoteEditorPage> {
                   ),
                 ),
               ),
-              QuillSimpleToolbar(
-                controller: _controller,
-                configurations: QuillSimpleToolbarConfigurations(
-                  multiRowsDisplay: false,
-                  color: themeBgColor,
-                ),
-              ),
+              // QuillSimpleToolbar(
+              //   controller: _controller,
+              //   configurations: QuillSimpleToolbarConfigurations(
+              //     multiRowsDisplay: false,
+              //     color: themeBgColor,
+              //   ),
+              // ),
+              // 字号 标题
+              NoteEditorMenu(editorController: _controller)
             ],
           ),
         ),
