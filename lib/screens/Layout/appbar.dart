@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:provider/provider.dart';
-import 'package:toast_note/shares/colors.dart';
-import 'package:toast_note/providers/config.dart';
+import 'package:toast_note/widgets/custom_icon_button.dart';
 
 class Appbar extends StatelessWidget implements PreferredSizeWidget {
   const Appbar({
@@ -15,13 +13,10 @@ class Appbar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    final configProvider = Provider.of<ConfigProvider>(context);
-
     return AppBar(
       elevation: 0,
       toolbarHeight: 70,
       automaticallyImplyLeading: false,
-      backgroundColor: isThemeBgColor(configProvider),
       title: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -46,7 +41,7 @@ class Appbar extends StatelessWidget implements PreferredSizeWidget {
                         height: 30,
                       ),
                     ),
-                    Column(
+                    const Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
@@ -54,13 +49,10 @@ class Appbar extends StatelessWidget implements PreferredSizeWidget {
                           style: TextStyle(
                             fontSize: 14,
                             fontWeight: FontWeight.w600,
-                            color: configProvider.isLight
-                                ? Colors.black
-                                : Colors.white,
                           ),
                         ),
-                        const SizedBox(height: 4),
-                        const Text(
+                        SizedBox(height: 4),
+                        Text(
                           "Welcome back!",
                           style: TextStyle(
                             fontSize: 11,
@@ -79,8 +71,9 @@ class Appbar extends StatelessWidget implements PreferredSizeWidget {
             flex: 1,
             child: Align(
               alignment: Alignment.centerRight,
-              child: GestureDetector(
-                behavior: HitTestBehavior.opaque,
+              child: CustomIconButton(
+                icon: FontAwesomeIcons.plus,
+                padding: const EdgeInsets.only(right: 0),
                 onTap: () {
                   Navigator.pushNamed(context, "/NoteEditor");
                   // showModalBottomSheet(
@@ -98,19 +91,6 @@ class Appbar extends StatelessWidget implements PreferredSizeWidget {
                   //   },
                   // );
                 },
-                child: Container(
-                  width: 24,
-                  height: 24,
-                  decoration: BoxDecoration(
-                    color: commonColor,
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  child: const Icon(
-                    FontAwesomeIcons.plus,
-                    size: 14,
-                    color: Colors.white,
-                  ),
-                ),
               ),
             ),
           )

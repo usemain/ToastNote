@@ -8,6 +8,7 @@ import 'package:toast_note/screens/NoteEditor/note_editor_menu.dart';
 import 'package:toast_note/shares/colors.dart';
 import 'package:toast_note/providers/config.dart';
 import 'package:toast_note/shares/config.dart';
+import 'package:toast_note/widgets/custom_icon_button.dart';
 import 'package:toast_note/widgets/custom_scaffold.dart';
 
 class NoteEditorPage extends StatefulWidget {
@@ -48,27 +49,13 @@ class _NoteEditorPageState extends State<NoteEditorPage> {
         // interceptBack: true,
         interceptMessage: '您确定退出编辑吗?',
         actions: [
-          Container(
-            margin: const EdgeInsets.only(right: 15),
-            width: 24,
-            height: 24,
-            decoration: BoxDecoration(
-              color: commonColor,
-              borderRadius: BorderRadius.circular(12),
-            ),
-            child: GestureDetector(
-              onTap: () {
-                final json =
-                    jsonEncode(_controller.document.toDelta().toJson());
-                debugPrint(json);
-              },
-              child: const Icon(
-                FontAwesomeIcons.check,
-                size: 14,
-                color: Colors.white,
-              ),
-            ),
-          )
+          CustomIconButton(
+            icon: FontAwesomeIcons.check,
+            onTap: () {
+              final json = jsonEncode(_controller.document.toDelta().toJson());
+              debugPrint(json);
+            },
+          ),
         ],
         body: SafeArea(
           child: Column(

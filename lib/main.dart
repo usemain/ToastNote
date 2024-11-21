@@ -38,7 +38,7 @@ class _MainPageState extends State<MainPage> {
       child: Consumer<ConfigProvider>(
         builder: (context, configProvider, child) {
           return MaterialApp(
-            title: 'ToastNote',
+            title: 'com.usemain',
             theme: initTheme(configProvider),
             locale: const Locale('zh', 'CH'),
             supportedLocales: const [

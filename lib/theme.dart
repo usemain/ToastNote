@@ -57,7 +57,6 @@ ThemeData initTheme(ConfigProvider configProvider) {
       backgroundColor: isBackground,
       titleTextStyle: TextStyle(
         fontSize: 19,
-        fontWeight: FontWeight.w600,
         color: isPrimary,
       ),
       iconTheme: IconThemeData(
