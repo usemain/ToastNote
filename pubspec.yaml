@@ -38,3 +38,6 @@ flutter:
     - family: alimama
       fonts:
         - asset: assets/fonts/AlimamaShuHeiTi-Bold.ttf
+    - family: dingding
+      fonts:
+        - asset: assets/fonts/DingTalk-JinBuTi.ttf

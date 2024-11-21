@@ -53,7 +53,6 @@ class _MainPageState extends State<MainPage> {
             ],
             initialRoute: '/',
             onGenerateRoute: routes,
-            debugShowCheckedModeBanner: false,
           );
         },
       ),

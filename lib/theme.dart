@@ -56,7 +56,7 @@ ThemeData initTheme(ConfigProvider configProvider) {
       scrolledUnderElevation: 0,
       backgroundColor: isBackground,
       titleTextStyle: TextStyle(
-        fontSize: 17,
+        fontSize: 19,
         fontWeight: FontWeight.w600,
         color: isPrimary,
       ),

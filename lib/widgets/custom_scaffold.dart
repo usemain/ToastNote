@@ -32,7 +32,7 @@ class _CustomScaffoldState extends State<CustomScaffold> {
         title: Text(
           widget.title,
           style: const TextStyle(
-            fontFamily: 'alimama',
+            fontFamily: 'dingding',
             color: commonColor,
           ),
         ),
